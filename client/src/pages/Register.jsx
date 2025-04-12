@@ -65,16 +65,18 @@ const Register = () => {
         password: formData.password,
       });
 
-      console.log("Registration successful:", response.data);
-      setFormData({
-        username: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
+      if (response.status === 201) {
+        console.log("Registration successful:", response.data);
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
 
-      alert("Registration successful! Please login.");
-      navigate("/login");
+        alert("Registration successful! Please login.");
+        navigate("/login");
+      }
     } catch (error) {
       console.error(
         "Registration error:",

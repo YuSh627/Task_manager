@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow requests from the frontend
-    methods: ["GET", "POST", "PUT", "DELETE"], // Include DELETE method
-    credentials: true, // Allow cookies and credentials
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
     optionsSuccessStatus: 200,
   })
 );
@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRouter);
 app.use("/tasks", taskRouter);
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);

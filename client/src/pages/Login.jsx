@@ -39,7 +39,6 @@ const Login = () => {
         password: "",
       });
 
-      // Show success message and redirect to home
       alert("Login successful!");
       navigate("/");
     } catch (error) {

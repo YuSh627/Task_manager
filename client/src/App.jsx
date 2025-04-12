@@ -5,12 +5,10 @@ import Register from "./pages/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
 
-// Configure axios defaults
 axios.defaults.baseURL =
   import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 axios.defaults.withCredentials = true;
 
-// Add request interceptor
 axios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");

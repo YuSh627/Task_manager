@@ -58,7 +58,7 @@ server/
 ### 2.2 Backend
 - Node.js
 - Express
-- MySQL (hosted on Railway)
+- MySQL 
 - JWT (JSON Web Token)
 
 ## 3. Setup Instructions

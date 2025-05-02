@@ -16,18 +16,12 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 
 const Home = () => {
-  const [user, setUser] = useState(null);
+  const user = JSON.parse(localStorage.getItem("user"));
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState({ title: "", description: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
-    const userData = localStorage.getItem("user");
-    if (!userData) {
-      navigate("/login");
-      return;
-    }
-    setUser(JSON.parse(userData));
     fetchTasks();
   }, [navigate]);
 

@@ -88,7 +88,6 @@ const Login = () => {
             margin="normal"
             required
             value={formData.password}
-            end
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })
             }

@@ -6,7 +6,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
 
 axios.defaults.baseURL =
-  import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+  import.meta.env.VITE_BACKEND_URL ||
+  "https://task-manager-1-fafs.onrender.com";
 
 axios.interceptors.request.use(
   (config) => {
